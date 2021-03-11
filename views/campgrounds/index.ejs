@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <header class="jumbotron text-center">
+       <div class="container">
+	    <h1>Welcome to the YelpCamp Grounds!</h1>
+	    <p> You can view all the camps in here from all around the world.</p><br>
+	    <a href="/campgrounds/new" class="btn btn-primary btn-lg"> Add a new camp ground</a>
+	   </div>
+	</header>
+
+	<div class="row" style="display:flex; flex-wrap:wrap">
+		<% campgtem.forEach(function(data){ %>
+			<div class="col-md-3 col-sm-6 thumbnail">
+			   <img src="<%= data.image %>" class="img-thumbnail" alt="Cinque Terre" style="height:200px;">
+			   <div class="caption">
+			    <h3 class="text-center"><%= data.name %></h3>
+			   </div>
+	<p class="text-center"><a href="/campgrounds/<%= data._id %>" class="btn btn-info">more info!</a></p>
+			</div>
+		<% }) %>
+	</div>
+</div>
+<%- include('../partials/footer') %>
